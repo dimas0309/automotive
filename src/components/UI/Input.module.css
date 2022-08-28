@@ -1,0 +1,14 @@
+.input {
+    display: flex;
+    column-gap: 0.5rem;
+}
+
+.input input {
+    width: 3rem;
+    border: 2px solid #8FE3CF;
+    border-radius: 0.5rem;
+}
+
+.input input:focus {
+    outline: none;
+}

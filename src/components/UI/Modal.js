@@ -1,54 +1,42 @@
-import React, {Fragment} from 'react';
+import { Fragment } from 'react';
 import ReactDom from 'react-dom';
 
-import Card from './Card';
-import Button from './Button';
 import classes from './Modal.module.css';
 
 const Backdrop = (props) => {
     return (
-        <div className={classes.Backdrop}
-             onClick={props.onConfirm}/>
-    )
-};
+        <div className={classes.backdrop} 
+             onClick={props.onClose}/>
+    );
+}
 
 const ModalOverlay = (props) => {
     return (
-        <Card className={classes.modal}>
-            <header className={classes.header}>
-                <h2>{props.title}</h2>
-            </header>
+        <div className={classes.modal}>
             <div className={classes.content}>
-                <p>{props.message}</p>
+                {props.children}
             </div>
-            <footer className={classes.actions}>
-                <Button onClick={props.onConfirm}>
-                    Okay
-                </Button>
-            </footer>
-        </Card>
+        </div>
     )
-};
+}
+
+const portalElement = document.getElementById('overlays');
 
 const Modal = (props) => {
     return (
         <Fragment>
-            {
-                ReactDom.createPortal(
-                    <Backdrop onClick={props.onConfirm}/>,
-                    document.getElementById('backdrop-root')
-                )
-            }
-            {
-                ReactDom.createPortal(
-                    <ModalOverlay title={props.title}
-                                  message={props.message}
-                                  onConfirm={props.onConfirm}/>,
-                                  document.getElementById('overlay-root')
-                )
-            }
+            {ReactDom.createPortal(
+                <Backdrop onClose={props.onClose}/>,
+                portalElement
+            )}
+            {ReactDom.createPortal(
+                <ModalOverlay>
+                    {props.children}
+                </ModalOverlay>,
+                portalElement
+            )}
         </Fragment>
     )
-};
+}
 
 export default Modal;

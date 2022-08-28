@@ -1,0 +1,42 @@
+.order {
+    font-size: 22px;
+    font-weight: bold;
+    color: #002B5B;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.total-amount, .amount-paid, .balance-due {
+    margin-bottom: 0.5rem;
+    display: flex;
+    column-gap: 0.5rem;
+}
+
+.amount-paid input {
+    width: 5rem;
+    font-weight: bold;
+    color: #002B5B;
+    border: 2px solid #8FE3CF;
+    border-radius: 0.5rem;
+}
+
+.amount-paid input:focus {
+    outline: none;
+}
+
+.order button {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #8FE3CF;
+    background-color: #002B5B;
+    border: 2px solid #002B5B;
+    border-radius: 0.5rem;
+}
+
+.order button:hover {
+    font-weight: bold;
+    color: #002B5B;
+    background-color: #8FE3CF;
+    border: 2px solid #002B5B;
+}

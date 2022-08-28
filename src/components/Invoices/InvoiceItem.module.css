@@ -1,0 +1,9 @@
+.invoice-item {
+    margin-bottom: 0.5rem;
+    display: flex;
+    column-gap: 0.5rem;
+    font-size: 20px;
+    font-weight: bold;
+    list-style: none;
+    color: #002B5B;
+}

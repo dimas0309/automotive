@@ -1,0 +1,14 @@
+.headerButton {
+    padding: 0.5rem;
+    font-weight: bold;
+    color: #002B5B;
+    background-color: #8FE3CF;
+    border: 2px solid #002B5B;
+    border-radius: 0.5rem;
+}
+
+.headerButton:hover {
+    color: #8FE3CF;
+    background-color: #002B5B;
+    border: 2px solid #8FE3CF;
+}

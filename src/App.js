@@ -1,15 +1,37 @@
-import React, {Fragment, useState} from 'react';
+import { useState } from 'react';
 
-import Header from './components/Headers/Header';
-import Main from './components/Headers/Main';
+import InvoiceProvider from './store/InvoiceProvider';
+import Header from './components/Layout/Header';
+import Main from './components/Layout/Main';
  
+
 function App() {
-  
+  const [orderIsShown, setOrderIsShown] = useState(false);
+  const [productIsShow, setProductIsShow] = useState(false);
+
+  const showOrderHandler = () => {
+    setOrderIsShown(true);
+  }
+
+  const showProductHandle = () => {
+    setProductIsShow(true);
+  }
+
+  const hideOrderHandler = () => {
+    setOrderIsShown(false);
+  }
+
+  const hideProductHandler = () => {
+    setProductIsShow(false)
+  }
+
   return (
-    <Fragment>
+    <InvoiceProvider>
       <Header/>
-      <Main/> 
-    </Fragment>
+      <main>
+        <Main />
+      </main>
+    </InvoiceProvider>
   );
 }
 
